@@ -16,6 +16,14 @@ DuoGuard is a guardrail LLM trained with two-player reinforcement learning frame
 - **[Feb 2025]** We have released the [arXiv]() and the [model weights](https://huggingface.co/DuoGuard/DuoGuard-0.5B).
 - **[Coming Soon]** We will release training code and datasets in a future update.
 
+<p align="center">
+<img src="./figures/gen-guard-demo.png" width="600">
+</p>
+
+<p align="center">
+Figure 1. Overview of the two-player training pipeline. The generator produces synthetic data from seed data. The classifier make predictions and we measure these examples as being predicted correctly or incorrectly based on their seed data label. We train the generator with DPO to create increasingly challenging examples, which in turn improve the classifier through iterative training.
+</p>
+
 ## Setup
 ### Environment Installation
 ```bash
