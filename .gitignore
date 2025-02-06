@@ -1,0 +1,14 @@
+checkpoints
+*.log
+wandb
+
+__pycache__/
+*.pt
+outputs/
+evaluation/logs/
+evaluation/error_logs/
+
+generator/dpo/model
+generator/dpo/data
+
+requirements_dpo.txt
