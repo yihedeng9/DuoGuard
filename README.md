@@ -46,7 +46,7 @@ DuoGuard achieves superior multilingual safety performance compared to existing 
 | LlamaGuard3    | 1B   | 45.2 | 44.6 | 45.0 | 44.7 | 45.6          |
 | ShieldGemma    | 2B   | 43.1 | 37.4 | 37.0 | 36.8 | 61.8          |
 | LlamaGuard3    | 8B   | 63.4 | 61.9 | 61.5 | 61.3 | 72.1          |
-| **DuoGuard**    | **0.5B** | **74.9** | **72.7** | **73.9** | **71.9** | **16.47**        |
+| **DuoGuard**    | **0.5B** | **74.9** | **72.7** | **73.9** | **71.9** | **16.0**        |
 
 ## 📄 Citation
 If you use DuoGuard in your research, please cite:
