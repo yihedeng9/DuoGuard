@@ -16,7 +16,7 @@ DuoGuard is a guardrail LLM trained with two-player reinforcement learning frame
 - **[Feb 2025]** We have released the [arXiv]() and the [model weights](https://huggingface.co/DuoGuard/DuoGuard-0.5B).
 - **[Coming Soon]** We will release training code and datasets in a future update.
 
-## 🔧 Setup
+## Setup
 ### Environment Installation
 ```bash
 conda create -n duoguard python=3.10 -y
@@ -24,8 +24,7 @@ conda activate duoguard
 pip install -r requirements.txt
 ```
 
-## 🛠️ Evaluation
-### Evaluate Checkpoints
+## Evaluation
 #### Run Evaluation Script
 ```bash
 bash scripts/eval.sh
