@@ -7,7 +7,7 @@ import sys
 import json
 import os
 import argparse
-import time  # <-- Added for timing
+import time
 
 OUTPUT_ERROR_LOGS = False
 DEVICE = 'cuda:5'
