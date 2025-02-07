@@ -33,6 +33,7 @@ pip install -r requirements.txt
 ```
 
 ## Evaluation
+In `evaluation/test_single_input.py`, we provide the code to test a single input entry and obtain the full probability output from DuoGuard. 
 #### Run Evaluation Script
 ```bash
 bash scripts/eval.sh
