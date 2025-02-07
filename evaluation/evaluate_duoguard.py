@@ -83,9 +83,9 @@ datasets = {
     'XSTest': xstest_ds,
     'OpenAI': openai_ds,
     'ToxicChat': toxicchat_ds,
+    'BeaverTails': beavertails_ds,
     'RTP-LX': rtp_ds,
-    'XSafety': xsafety_ds,
-    'BeaverTails': beavertails_ds
+    'XSafety': xsafety_ds
 }
 
 # Evaluation function with average latency calculation
@@ -204,4 +204,4 @@ for name, dataset in datasets.items():
     print()
     print()
 
-    log_file.close()
+log_file.close()
