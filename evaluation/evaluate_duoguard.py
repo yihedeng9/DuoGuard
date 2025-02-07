@@ -9,11 +9,17 @@ import os
 import argparse
 import time
 
+### Important ###
+# Change model tokenizer to the corresponding tokenizer #
+tokenizers = {
+              "DuoGuard/DuoGuard-0.5B": "Qwen/Qwen2.5-0.5B",
+              "DuoGuard/DuoGuard-1.5B-transfer": "Qwen/Qwen2.5-1.5B",
+              "DuoGuard/DuoGuard-1B-Llama-3.2-transfer": "meta-llama/Llama-3.2-1B",
+              }
+
 OUTPUT_ERROR_LOGS = False
 DEVICE = 'cuda:5'
-CHECKPOINTS = [
-    "DuoGuard/DuoGuard-0.5B",
-]
+CHECKPOINT = "DuoGuard/DuoGuard-0.5B"
 
 parser = argparse.ArgumentParser(description='Evaluate DuoGuard models.')
 parser.add_argument('--language', type=str, choices=['En', 'Fr', 'Es', 'De'], default='En', help='Language of the evaluation dataset')
@@ -25,7 +31,7 @@ os.makedirs('evaluation/logs', exist_ok=True)
 os.makedirs('evaluation/error_logs', exist_ok=True)
 
 # Tokenizer initialization
-tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B")
+tokenizer = AutoTokenizer.from_pretrained(tokenizers[CHECKPOINT]) 
 tokenizer.pad_token = tokenizer.eos_token
 
 # Load datasets
@@ -177,27 +183,25 @@ def evaluate(model, dataset, threshold=0.5, dataname='default', checkpoint_name=
         'Average Latency (s)': avg_latency
     }
 
-# Main loop for evaluating each checkpoint
-for checkpoint in CHECKPOINTS:
-    checkpoint_name = checkpoint.split('/')[-1]
-    log_file = open(f'./evaluation/logs/eval_{language}_{checkpoint_name}.log', 'w')
-    sys.stdout = log_file
+checkpoint_name = CHECKPOINT.split('/')[-1]
+log_file = open(f'./evaluation/logs/eval_{language}_{checkpoint_name}.log', 'w')
+sys.stdout = log_file
 
-    finetuned_model = AutoModelForSequenceClassification.from_pretrained(checkpoint, torch_dtype=torch.bfloat16).to(DEVICE)
+finetuned_model = AutoModelForSequenceClassification.from_pretrained(CHECKPOINT, torch_dtype=torch.bfloat16).to(DEVICE)
 
-    for name, dataset in datasets.items():
-        results = evaluate(
-            finetuned_model,
-            dataset,
-            dataname=name,
-            checkpoint_name=checkpoint,
-            output_error_logs=OUTPUT_ERROR_LOGS
-        )
+for name, dataset in datasets.items():
+    results = evaluate(
+        finetuned_model,
+        dataset,
+        dataname=name,
+        checkpoint_name=checkpoint_name,
+        output_error_logs=OUTPUT_ERROR_LOGS
+    )
 
-        print(f'### {name} ###')
-        print('--- Results ---')
-        [print(f'{k}: {v:.3f}' if isinstance(v, float) else f'{k}: {v}') for k, v in results.items()]
-        print()
-        print()
+    print(f'### {name} ###')
+    print('--- Results ---')
+    [print(f'{k}: {v:.3f}' if isinstance(v, float) else f'{k}: {v}') for k, v in results.items()]
+    print()
+    print()
 
     log_file.close()
