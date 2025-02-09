@@ -3,7 +3,7 @@
 <h1>DuoGuard: A Two-Player RL-Driven Framework for Multilingual LLM Guardrails</h1>
 
 <p align="center">
-  <a href="https://huggingface.co/DuoGuard/DuoGuard-0.5B">🤗Model</a> • 
+  <a href="https://huggingface.co/collections/DuoGuard/duoguard-models-67a29ad8bd579a404e504d21">🤗Model</a> • 
   <a href="">🤗Dataset (comming soon)</a>
 </p>
 
