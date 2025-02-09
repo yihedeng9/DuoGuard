@@ -19,7 +19,7 @@ tokenizers = {
 
 OUTPUT_ERROR_LOGS = False
 DEVICE = 'cuda:5'
-CHECKPOINT = "DuoGuard/DuoGuard-0.5B"
+CHECKPOINT = "DuoGuard/DuoGuard-1.5B-transfer"
 
 parser = argparse.ArgumentParser(description='Evaluate DuoGuard models.')
 parser.add_argument('--language', type=str, choices=['En', 'Fr', 'Es', 'De'], default='En', help='Language of the evaluation dataset')

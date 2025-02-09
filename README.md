@@ -13,8 +13,8 @@
 
 DuoGuard is a guardrail LLM trained with two-player reinforcement learning framework designed to enhance multilingual safeguard for large language models (LLMs). Our approach enables the co-evolution of a generator and a guardrail model to iteratively improve synthetic multilingual safety data generation. DuoGuard significantly outperforms state-of-the-art models in multilingual safety tasks while maintaining high inference efficiency.
 
-- **[Feb 2025]** We have released the [arXiv]() and the [model weights](https://huggingface.co/DuoGuard/DuoGuard-0.5B).
-- **[Coming Soon]** We will release training code and datasets in a future update.
+- **[Feb 2025]** We have released the code, [arXiv]() and the [model weights](https://huggingface.co/DuoGuard/DuoGuard-0.5B).
+- **[Coming Soon]** We will release the datasets and training scripts in a future update.
 
 <p align="center">
 <img src="./figures/gen-guard-demo.png" width="600">
@@ -54,6 +54,7 @@ DuoGuard achieves superior multilingual safety performance compared to existing 
 |-----------------|------|------|------|------|------|-----------------|
 | LlamaGuard3    | 1B   | 45.2 | 44.6 | 45.0 | 44.7 | 45.6          |
 | ShieldGemma    | 2B   | 43.1 | 37.4 | 37.0 | 36.8 | 61.8          |
+| LlamaGuard2    | 8B   | 59.7 | 56.6 | 56.5 | 55.4 | 52.3          |
 | LlamaGuard3    | 8B   | 63.4 | 61.9 | 61.5 | 61.3 | 72.1          |
 | **DuoGuard**    | **0.5B** | **74.9** | **72.7** | **73.9** | **71.9** | **16.0**        |
 
