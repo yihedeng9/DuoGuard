@@ -13,7 +13,7 @@
 
 DuoGuard is a guardrail LLM trained with two-player reinforcement learning framework designed to enhance multilingual safeguard for large language models (LLMs). Our approach enables the co-evolution of a generator and a guardrail model to iteratively improve synthetic multilingual safety data generation. DuoGuard significantly outperforms state-of-the-art models in multilingual safety tasks while maintaining high inference efficiency.
 
-- **[Feb 2025]** We have released the code, [arXiv]() and the [model weights](https://huggingface.co/DuoGuard/DuoGuard-0.5B).
+- **[Feb 2025]** We have released the code, [arXiv](https://arxiv.org/abs/2502.05163) and the [model weights](https://huggingface.co/DuoGuard/DuoGuard-0.5B).
 - **[Coming Soon]** We will release the datasets and training scripts in a future update.
 
 <p align="center">
@@ -61,12 +61,14 @@ DuoGuard achieves superior multilingual safety performance compared to existing 
 ## 📄 Citation
 If you use DuoGuard in your research, please cite:
 ```
-@article{duoguard2025,
-  author    = {Yihe Deng and Yu Yang and Junkai Zhang and Wei Wang and Bo Li},
-  title     = {DuoGuard: A Two-Player RL-Driven Framework for Multilingual LLM Guardrails},
-  journal   = {arXiv preprint},
-  year      = {2025},
-  url       = {https://arxiv.org/abs/2401.12345}
+@misc{deng2025duoguardtwoplayerrldrivenframework,
+      title={DuoGuard: A Two-Player RL-Driven Framework for Multilingual LLM Guardrails}, 
+      author={Yihe Deng and Yu Yang and Junkai Zhang and Wei Wang and Bo Li},
+      year={2025},
+      eprint={2502.05163},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.05163}, 
 }
 ```
 
